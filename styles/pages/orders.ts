@@ -42,12 +42,18 @@ export const Neighborhood = styled.h3`
     font-weight: normal;
 `
 
-export const ContainerIconDelete = styled.a`
-    width: 14%;
-    z-index: 2;
-    padding: 2%;
+export const Icons = styled.div`
+    width: 25%;
     display: flex;
     margin-left: auto;
+`
+
+export const ContainerIconDelete = styled.a`
+    z-index: 2;
+    padding: 2%;
+    height: 120%;
+    width: 100%;
+    display: flex;
     border-radius: 25%;
     transition-duration: 0.1s;
     transition-timing-function: linear;
@@ -60,7 +66,30 @@ export const ContainerIconDelete = styled.a`
 `
 
 export const IconDelete = styled.svg`
-    
+    width: 80%;
+    margin: auto;
+`
+
+export const ContainerIconCheck = styled.a`
+    z-index: 2;
+    padding: 2%;
+    height: 120%;
+    width: 100%;
+    display: flex;
+    border-radius: 25%;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    fill: ${props => props.theme.primary};
+
+    :hover {
+        border-radius: 50%;
+        background-color: ${props => props.theme.secondary};
+    }
+`
+
+export const IconCheck= styled.svg`
+    width: 80%;
+    margin: auto;
 `
 
 export const Balance = styled.h3`
@@ -115,6 +144,98 @@ const show = keyframes`
     }
 `
 
+export const ModalOrder = styled(ModalNotStyled)`
+    width: 40%;
+    height: 40%;
+    margin: auto;
+    outline: none;
+    display: flex;
+    padding: 1.5%;
+    border-radius: 15px;
+    flex-direction: column;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: ${props => props.theme.backgroundColor};
+    
+    ${props => props.isOpen && css`
+        animation: ${show} 0.5s;
+    `}
+`
+
+export const ModalFinish = styled(ModalNotStyled)`
+    width: 40%;
+    height: 40%;
+    margin: auto;
+    outline: none;
+    display: flex;
+    padding: 1.5%;
+    border-radius: 15px;
+    flex-direction: column;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: ${props => props.theme.backgroundColor};
+    
+    ${props => props.isOpen && css`
+        animation: ${show} 0.5s;
+    `}
+`
+
+export const MessageConfirmFinish = styled.h2`
+    margin-top: 5%;
+    align-self: center;
+`
+
+export const ContainerButtonsFinish = styled.div`
+    width: 60%;
+    display: flex;
+    margin-top: auto;
+    flex-direction: row;
+    justify-content: space-between;
+`
+
+export const ButtonCancelFinish = styled.button`
+    border: none;
+    padding: 3% 12%;
+    font-size: 1vw;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    transform: scale(0.95);
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    color: ${props => props.theme.color};
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+    background-color: ${props => props.theme.backgroundColorSecondary};
+
+    :hover {
+        opacity: 0.8;
+        transform: scale(1);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 6px 15px 0px;
+    }
+`
+
+export const ButtonConfirmFinish = styled.button`
+    border: none;
+    padding: 3% 8%;
+    font-size: 1vw;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    transform: scale(0.95);
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+    background-color: ${props => props.theme.primary};
+    color: ${props => props.theme.backgroundColorSecondary};
+
+    :hover {
+        opacity: 0.8;
+        transform: scale(1);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 6px 15px 0px;
+    }
+`
 
 export const ModalDelete = styled(ModalNotStyled)`
     width: 40%;
@@ -140,7 +261,7 @@ export const MessageConfirmDelete = styled.h2`
     align-self: center;
 `
 
-export const ContainerButtons = styled.div`
+export const ContainerButtonsDelete = styled.div`
     width: 60%;
     display: flex;
     margin-top: auto;
