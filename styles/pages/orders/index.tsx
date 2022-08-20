@@ -6,11 +6,41 @@ export const Container = styled.main`
     flex-direction: column;
 `
 
+export const HeaderNav = styled.header`
+    display: flex;
+    flex-direction: row;
+`
+
 export const Title = styled.h1`
+    margin: auto;
     margin-top: 4%;
     font-size: 2.5vw;
-    align-self: center;
     color: ${props => props.theme.primary};
+`
+
+export const ButtonOrdersFinished = styled.a`
+    right: 2%;
+    display: flex;
+    margin-top: 5%;
+    font-size: 1.2vw;
+    font-weight: bold;
+    padding: 1.5% 2.5%;
+    position: absolute;
+    align-items: center;
+    border-radius: 20px;
+    text-decoration: none;
+    transform: scale(0.95);
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    color: ${props => props.theme.primary};
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px 0px;
+    background-color: ${props => props.theme.backgroundColorSecondary};
+
+    :hover {
+        opacity: 0.8;
+        transform: scale(1);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 6px 15px 0px;
+    }
 `
 
 export const OrdersContainer = styled.div`
