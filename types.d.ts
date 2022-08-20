@@ -55,6 +55,7 @@ export interface IOrder {
     balance: number
     created: ICreated
     list: IItemList[]
+    finished?: boolean
     location: ILocation
     withdrawal: boolean
     balanceConverted: string
