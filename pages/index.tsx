@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import { Container, Title } from '../styles/pages'
+import { Container, Title, ButtonOrders } from '../styles/pages'
+import Link from 'next/link'
 
 export default function Home() {
     return (
@@ -10,6 +11,11 @@ export default function Home() {
             </Head>
             <Container>
                 <Title>Template de Restaurante</Title>
+                <Link href="/orders" passHref>
+                    <ButtonOrders title="Pedidos">
+                        Pedidos
+                    </ButtonOrders>
+                </Link>
             </Container>
         </>
     )

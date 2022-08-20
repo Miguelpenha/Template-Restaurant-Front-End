@@ -2,7 +2,15 @@ import styled, { keyframes, css } from 'styled-components'
 import ModalNotStyled from 'react-modal'
 
 export const Container = styled.main`
+    display: flex;
+    flex-direction: column;
+`
 
+export const Title = styled.h1`
+    margin-top: 4%;
+    font-size: 2.5vw;
+    align-self: center;
+    color: ${props => props.theme.primary};
 `
 
 export const OrdersContainer = styled.div`

@@ -1,7 +1,7 @@
 import api from '../api'
 import base from '../api/base'
 import { IOrder } from '../types'
-import { Container, OrdersContainer, Order, Header, Neighborhood, Icons, ContainerIconDelete, IconDelete, ContainerIconCheck, IconCheck, Balance, Note, Footer, Created, Withdrawal, ModalOrder, ModalFinish, MessageConfirmFinish, ContainerButtonsFinish, ButtonCancelFinish, ButtonConfirmFinish, ModalDelete, MessageConfirmDelete, ContainerButtonsDelete, ButtonCancelDelete, ButtonConfirmDelete } from '../styles/pages/orders'
+import { Container, Title, OrdersContainer, Order, Header, Neighborhood, Icons, ContainerIconDelete, IconDelete, ContainerIconCheck, IconCheck, Balance, Note, Footer, Created, Withdrawal, ModalOrder, ModalFinish, MessageConfirmFinish, ContainerButtonsFinish, ButtonCancelFinish, ButtonConfirmFinish, ModalDelete, MessageConfirmDelete, ContainerButtonsDelete, ButtonCancelDelete, ButtonConfirmDelete } from '../styles/pages/orders'
 import Loading from '../components/Loading'
 import { useState } from 'react'
 
@@ -13,6 +13,7 @@ export default function Orders() {
 
     return (
         <Container>
+            <Title>Pedidos</Title>
             <OrdersContainer>
                 {orders ? orders.map(order => !order.finished && (
                     <Order key={order._id} title="Ver pedido" onClick={ev => {
