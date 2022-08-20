@@ -8,7 +8,30 @@ export const Container = styled.main`
 
 export const HeaderNav = styled.header`
     display: flex;
+    position: relative;
     flex-direction: row;
+`
+
+export const ButtonBack = styled.a`
+    left: 1%;
+    top: 25%;
+    width: 3.5%;
+    height: 50%;
+    padding: 0.5%;
+    display: flex;
+    border-radius: 25%;
+    position: absolute;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    
+    :hover {
+        border-radius: 50%;
+        background-color: ${props => props.theme.secondary};
+    }
+`
+
+export const IconButtonBack = styled.svg`
+    fill: ${props => props.theme.primary};
 `
 
 export const Title = styled.h1`
@@ -16,31 +39,6 @@ export const Title = styled.h1`
     margin-top: 4%;
     font-size: 2.5vw;
     color: ${props => props.theme.primary};
-`
-
-export const ButtonOrdersFinished = styled.a`
-    right: 2%;
-    display: flex;
-    margin-top: 5%;
-    font-size: 1.2vw;
-    font-weight: bold;
-    padding: 1.5% 2.5%;
-    position: absolute;
-    align-items: center;
-    border-radius: 20px;
-    text-decoration: none;
-    transform: scale(0.95);
-    transition-duration: 0.1s;
-    transition-timing-function: linear;
-    color: ${props => props.theme.primary};
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px 0px;
-    background-color: ${props => props.theme.backgroundColorSecondary};
-
-    :hover {
-        opacity: 0.8;
-        transform: scale(1);
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 6px 15px 0px;
-    }
 `
 
 export const OrdersContainer = styled.div`
@@ -84,13 +82,14 @@ export const Icons = styled.div`
     width: 25%;
     display: flex;
     margin-left: auto;
+    justify-content: flex-end;
 `
 
 export const ContainerIconDelete = styled.a`
+    width: 50%;
     z-index: 2;
     padding: 2%;
     height: 120%;
-    width: 100%;
     display: flex;
     border-radius: 25%;
     transition-duration: 0.1s;
@@ -104,28 +103,6 @@ export const ContainerIconDelete = styled.a`
 `
 
 export const IconDelete = styled.svg`
-    width: 80%;
-    margin: auto;
-`
-
-export const ContainerIconCheck = styled.a`
-    z-index: 2;
-    padding: 2%;
-    height: 120%;
-    width: 100%;
-    display: flex;
-    border-radius: 25%;
-    transition-duration: 0.1s;
-    transition-timing-function: linear;
-    fill: ${props => props.theme.primary};
-
-    :hover {
-        border-radius: 50%;
-        background-color: ${props => props.theme.secondary};
-    }
-`
-
-export const IconCheck= styled.svg`
     width: 80%;
     margin: auto;
 `

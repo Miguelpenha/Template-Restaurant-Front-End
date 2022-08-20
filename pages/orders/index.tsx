@@ -1,7 +1,7 @@
 import api from '../../api'
 import base from '../../api/base'
 import { IOrder } from '../../types'
-import { Container, HeaderNav, Title, ButtonOrdersFinished, OrdersContainer, Order, Header, Neighborhood, Icons, ContainerIconDelete, IconDelete, ContainerIconCheck, IconCheck, Balance, Note, Footer, Created, Withdrawal, ModalOrder, ModalFinish, MessageConfirmFinish, ContainerButtonsFinish, ButtonCancelFinish, ButtonConfirmFinish, ModalDelete, MessageConfirmDelete, ContainerButtonsDelete, ButtonCancelDelete, ButtonConfirmDelete } from '../../styles/pages/orders'
+import { Container, HeaderNav, ButtonBack, IconButtonBack, Title, ButtonOrdersFinished, OrdersContainer, Order, Header, Neighborhood, Icons, ContainerIconDelete, IconDelete, ContainerIconCheck, IconCheck, Balance, Note, Footer, Created, Withdrawal, ModalOrder, ModalFinish, MessageConfirmFinish, ContainerButtonsFinish, ButtonCancelFinish, ButtonConfirmFinish, ModalDelete, MessageConfirmDelete, ContainerButtonsDelete, ButtonCancelDelete, ButtonConfirmDelete } from '../../styles/pages/orders'
 import Loading from '../../components/Loading'
 import { useState } from 'react'
 import Link from 'next/link'
@@ -15,6 +15,14 @@ export default function Orders() {
     return (
         <Container>
             <HeaderNav>
+                <Link href="/" passHref>
+                    <ButtonBack title="Voltar">
+                        <IconButtonBack xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0V0z" fill="none" opacity=".87"/>
+                            <path d="M17.51 3.87L15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12l8.13-8.13z"/>
+                        </IconButtonBack>
+                    </ButtonBack>
+                </Link>
                 <Title>Pedidos</Title>
                 <Link href="orders/finished" passHref>
                     <ButtonOrdersFinished title="Pedidos finalizados">Pedidos finalizados</ButtonOrdersFinished>
