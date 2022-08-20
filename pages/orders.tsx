@@ -14,7 +14,7 @@ export default function Orders() {
     return (
         <Container>
             <OrdersContainer>
-                {orders ? orders.map(order => 
+                {orders ? orders.map(order => !order.finished && (
                     <Order key={order._id} title="Ver pedido" onClick={ev => {
                         ev.stopPropagation()
                         ev.cancelable = true
@@ -55,7 +55,7 @@ export default function Orders() {
                             {order.withdrawal && <Withdrawal>Pedido para retirada</Withdrawal>}
                         </Footer>
                     </Order>
-                ) : <Loading/>}
+                )) : <Loading/>}
                 <ModalOrder
                     style={{
                         overlay: {
