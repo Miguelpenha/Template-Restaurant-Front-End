@@ -38,14 +38,16 @@ export const Icons = styled.div`
     margin-left: auto;
 `
 
-export const ContainerIconDelete = styled.a`
+export const ContainerIconDelete = styled.button`
     z-index: 2;
+    width: 100%;
     padding: 2%;
     height: 120%;
-    width: 100%;
+    border: none;
     display: flex;
     border-radius: 25%;
     transition-duration: 0.1s;
+    background-color: transparent;
     transition-timing-function: linear;
     fill: ${props => props.theme.primary};
 
@@ -60,14 +62,16 @@ export const IconDelete = styled.svg`
     margin: auto;
 `
 
-export const ContainerIconCheck = styled.a`
+export const ContainerIconCheck = styled.button`
     z-index: 2;
     padding: 2%;
-    height: 120%;
     width: 100%;
+    height: 120%;
+    border: none;
     display: flex;
     border-radius: 25%;
     transition-duration: 0.1s;
+    background-color: transparent;
     transition-timing-function: linear;
     fill: ${props => props.theme.primary};
 

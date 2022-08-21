@@ -87,14 +87,16 @@ export const Icons = styled.div`
     justify-content: flex-end;
 `
 
-export const ContainerIconDelete = styled.a`
+export const ContainerIconDelete = styled.button`
     width: 50%;
     z-index: 2;
     padding: 2%;
     height: 120%;
+    border: none;
     display: flex;
     border-radius: 25%;
     transition-duration: 0.1s;
+    background-color: transparent;
     transition-timing-function: linear;
     fill: ${props => props.theme.primary};
 
