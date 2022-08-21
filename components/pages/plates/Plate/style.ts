@@ -45,6 +45,7 @@ export const ContainerIconDelete = styled.button`
     height: 120%;
     border: none;
     display: flex;
+    cursor: pointer;
     border-radius: 25%;
     transition-duration: 0.1s;
     background-color: transparent;
