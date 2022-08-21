@@ -12,6 +12,13 @@ export const Title = styled.h1`
     text-align: center;
 `
 
+export const Menu = styled.nav`
+    width: 100%;
+    display: flex;
+    align-self: center;
+    justify-content: space-evenly;
+`
+
 export const ButtonOrders = styled.a`
     display: flex;
     padding: 2% 4%;
