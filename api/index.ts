@@ -1,9 +1,13 @@
 import { AxiosRequestConfig } from 'axios'
-import useSWR, { SWRConfiguration } from 'swr'
+import useSWR from 'swr'
 import base from './base'
 
-const options: SWRConfiguration = {
-    refreshInterval: 100
+interface IOptions {
+    refreshInterval: number
+}
+
+const options: IOptions = {
+    refreshInterval: 1000
 }
 
 export function get<Idata>(url: string, config?: AxiosRequestConfig) {
