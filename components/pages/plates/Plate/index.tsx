@@ -4,16 +4,17 @@ import { Container, Header, Name, Icons, ContainerIconDelete, IconDelete, Price,
 
 interface Iprops {
     plate: IPlate
+    setOpenPlateModal: Dispatch<SetStateAction<IPlate | null | undefined>>
     setOpenDeleteModal: Dispatch<SetStateAction<IPlate | null | undefined>>
 }
 
-const Plate: FC<Iprops> = ({ plate, setOpenDeleteModal }) => {
+const Plate: FC<Iprops> = ({ plate, setOpenPlateModal, setOpenDeleteModal }) => {
     return (
         <Container key={plate._id} title="Ver pedido" onClick={ev => {
             ev.stopPropagation()
             ev.cancelable = true
 
-            // setOpenOrderModal(order)
+            setOpenPlateModal(plate)
         }}>
             <Header>
                 <Name>{plate.name}</Name>

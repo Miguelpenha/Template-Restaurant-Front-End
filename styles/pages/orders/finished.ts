@@ -44,6 +44,7 @@ export const Title = styled.h1`
 export const OrdersContainer = styled.div`
     display: grid;
     margin-top: 5%;
+    grid-row-gap: 15%;
     grid-template-columns: repeat(4, 1fr);
 `
 
@@ -123,8 +124,8 @@ export const Footer = styled.div`
 `
 
 export const Created = styled.span`
-    padding: 4% 0%;
     display: flex;
+    padding: 4% 0%;
     font-size: 0.9vw;
     align-self: center;
 `

@@ -41,9 +41,43 @@ export const Title = styled.h1`
     color: ${props => props.theme.primary};
 `
 
+export const ContainerIconAdd = styled.a`
+    right: 2%;
+    width: 18%;
+    display: flex;
+    padding: 1.5%;
+    margin-top: 5%;
+    font-size: 1.5vw;
+    font-weight: bold;
+    position: absolute;
+    align-self: center;
+    align-items: center;
+    border-radius: 20px;
+    text-decoration: none;
+    transform: scale(0.95);
+    transition-duration: 0.1s;
+    justify-content: space-evenly;
+    transition-timing-function: linear;
+    color: ${props => props.theme.primary};
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px 0px;
+    background-color: ${props => props.theme.backgroundColorSecondary};
+
+    :hover {
+        opacity: 0.8;
+        transform: scale(1);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 6px 15px 0px;
+    }
+`
+
+export const IconAdd = styled.svg`
+    width: 2vw;
+    fill: ${props => props.theme.primary};
+`
+
 export const PlatesContainer = styled.div`
     display: grid;
     margin-top: 5%;
+    grid-row-gap: 15%;
     grid-template-columns: repeat(4, 1fr);
 `
 
@@ -57,6 +91,25 @@ const show = keyframes`
     100% {
         opacity: 100%;
     }
+`
+
+export const ModalPlate = styled(ModalNotStyled)`
+    width: 40%;
+    height: 40%;
+    margin: auto;
+    outline: none;
+    display: flex;
+    padding: 1.5%;
+    border-radius: 15px;
+    flex-direction: column;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: ${props => props.theme.backgroundColor};
+    
+    ${props => props.isOpen && css`
+        animation: ${show} 0.5s;
+    `}
 `
 
 export const ModalDelete = styled(ModalNotStyled)`

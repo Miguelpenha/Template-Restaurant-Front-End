@@ -10,6 +10,7 @@ export const Title = styled.h1`
     margin-top: 4%;
     font-size: 2.5vw;
     text-align: center;
+    color: ${props => props.theme.primary};
 `
 
 export const Menu = styled.nav`
@@ -20,8 +21,9 @@ export const Menu = styled.nav`
 `
 
 export const ButtonOrders = styled.a`
+    width: 12.5%;
     display: flex;
-    padding: 2% 4%;
+    padding: 1.5%;
     margin-top: 5%;
     font-size: 1.5vw;
     font-weight: bold;
@@ -31,6 +33,7 @@ export const ButtonOrders = styled.a`
     text-decoration: none;
     transform: scale(0.95);
     transition-duration: 0.1s;
+    justify-content: space-evenly;
     transition-timing-function: linear;
     color: ${props => props.theme.primary};
     box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px 0px;
@@ -41,4 +44,9 @@ export const ButtonOrders = styled.a`
         transform: scale(1);
         box-shadow: rgba(0, 0, 0, 0.3) 0px 6px 15px 0px;
     }
+`
+
+export const IconButtonOrders = styled.svg`
+    width: 2vw;
+    fill: ${props => props.theme.primary};
 `

@@ -43,17 +43,20 @@ export const Title = styled.h1`
 
 export const ButtonOrdersFinished = styled.a`
     right: 2%;
+    width: 20%;
     display: flex;
+    padding: 1.5%;
     margin-top: 5%;
-    font-size: 1.2vw;
+    font-size: 1.5vw;
     font-weight: bold;
-    padding: 1.5% 2.5%;
     position: absolute;
+    align-self: center;
     align-items: center;
     border-radius: 20px;
     text-decoration: none;
     transform: scale(0.95);
     transition-duration: 0.1s;
+    justify-content: space-evenly;
     transition-timing-function: linear;
     color: ${props => props.theme.primary};
     box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px 0px;
@@ -66,9 +69,15 @@ export const ButtonOrdersFinished = styled.a`
     }
 `
 
+export const IconButtonOrdersFinished = styled.svg`
+    width: 2vw;
+    fill: ${props => props.theme.primary};
+`
+
 export const OrdersContainer = styled.div`
     display: grid;
     margin-top: 5%;
+    grid-row-gap: 15%;
     grid-template-columns: repeat(4, 1fr);
 `
 
