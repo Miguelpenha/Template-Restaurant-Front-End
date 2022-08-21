@@ -48,9 +48,10 @@ export const OrdersContainer = styled.div`
     grid-template-columns: repeat(4, 1fr);
 `
 
-export const Order = styled.a`
+export const Order = styled.button`
     width: 80%;
     padding: 4%;
+    border: none;
     margin: auto;
     display: flex;
     cursor: pointer;

@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
-export const Container = styled.a`
+export const Container = styled.button`
     width: 80%;
     padding: 4%;
     margin: auto;
+    border: none;
     display: flex;
     cursor: pointer;
     border-radius: 15px;
