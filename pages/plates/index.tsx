@@ -9,7 +9,7 @@ import ModalPlateContent from '../../components/pages/plates/ModalPlateContent'
 import ModalDeleteContent from '../../components/pages/plates/ModalDeleteContent'
 
 function Plates() {
-    const { data: plates, mutate: platesMutate } = api.get<IPlate[]>('/plates')
+    const { data: plates, mutate: platesMutate } = api.get<IPlate[]>('/plates?photo=true')
     const [openPlateModal, setOpenPlateModal] = useState<IPlate | null>()
     const [openDeleteModal, setOpenDeleteModal] = useState<IPlate | null>()
 
