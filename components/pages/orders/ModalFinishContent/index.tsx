@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, FC } from 'react'
 import { IOrder } from '../../../../types'
 import { MessageConfirmFinish, ContainerButtonsFinish, ButtonCancelFinish, ButtonConfirmFinish } from './style'
 import base from '../../../../api/base'
+import { toast } from 'react-toastify'
 
 interface Iprops {
     ordersMutate: Function
@@ -23,6 +24,10 @@ const ModalFinishContent: FC<Iprops> = ({ ordersMutate, openFinishModal, setOpen
                 await ordersMutate()
 
                 setOpenFinishModal(null)
+
+                toast('Pedido finalizado com sucesso!', {
+                    type: 'success'
+                })
             }}>Finalizar pedido</ButtonConfirmFinish>
         </ContainerButtonsFinish>
     </>

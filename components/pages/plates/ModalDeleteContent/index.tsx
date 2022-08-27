@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, FC } from 'react'
 import { IPlate } from '../../../../types'
 import { MessageConfirmDelete, ContainerButtonsDelete, ButtonCancelDelete, ButtonConfirmDelete } from './style'
 import base from '../../../../api/base'
+import { toast } from 'react-toastify'
 
 interface Iprops {
     platesMutate: Function
@@ -20,6 +21,10 @@ const ModalDeleteContent: FC<Iprops> = ({ platesMutate, openDeleteModal, setOpen
                 await platesMutate()
                 
                 setOpenDeleteModal(null)
+
+                toast('Prato deletado com sucesso!', {
+                    type: 'success'
+                })
             }}>Deletar prato</ButtonConfirmDelete>
         </ContainerButtonsDelete>
     </>

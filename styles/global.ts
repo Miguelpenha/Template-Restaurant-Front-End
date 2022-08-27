@@ -28,4 +28,25 @@ export default createGlobalStyle`
         color: ${props => props.theme.color};
         background-color: ${props => props.theme.backgroundColor};
     }
+
+    .Toastify__toast {
+        color: ${props => props.theme.color};
+        background-color: ${props => props.theme.backgroundColorSecondary};
+    }
+
+    .Toastify__progress-bar {
+        background-color: ${props => props.theme.primary};
+    }
+
+    .Toastify__progress-bar--error {
+        background-color: red;
+    }
+
+    .Toastify__progress-bar--success {
+        background-color: green;
+    }
+
+    .Toastify__close-button {
+        color: ${props => props.theme.color};
+    }
 `

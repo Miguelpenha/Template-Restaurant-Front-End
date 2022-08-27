@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, FC } from 'react'
 import { IOrder } from '../../../../types'
 import { MessageConfirmDelete, ContainerButtonsDelete, ButtonCancelDelete, ButtonConfirmDelete } from './style'
 import base from '../../../../api/base'
+import { toast } from 'react-toastify'
 
 interface Iprops {
     ordersMutate: Function
@@ -20,6 +21,10 @@ const ModalDeleteContent: FC<Iprops> = ({ ordersMutate, openDeleteModal, setOpen
                 await ordersMutate()
                 
                 setOpenDeleteModal(null)
+
+                toast('Pedido deletado com sucesso!', {
+                    type: 'success'
+                })
             }}>Deletar pedido</ButtonConfirmDelete>
         </ContainerButtonsDelete>
     </>

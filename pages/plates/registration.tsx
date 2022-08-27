@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import api from '../../api/base'
 import { useRouter } from 'next/router'
+import { toast } from 'react-toastify'
 
 function Registration() {
     const [name, setName] = useState('')
@@ -28,15 +29,25 @@ function Registration() {
             <Form onSubmit={async ev => {
                 ev.preventDefault()
 
-                await api.post('/plates', {
-                    name,
-                    price,
-                    weight,
-                    peoplesCount,
-                    description
-                })
+                if (name && price && weight && peoplesCount) {
+                    await api.post('/plates', {
+                        name,
+                        price,
+                        weight,
+                        peoplesCount,
+                        description
+                    })
+    
+                    router.back()
 
-                router.back()
+                    toast('Prato cadastrado com sucesso!', {
+                        type: 'success'
+                    })
+                } else {
+                    toast('Campos em falta', {
+                        type: 'error'
+                    })
+                }
             }}>
                 <Field>
                     <Label htmlFor="Nome">Nome</Label>
