@@ -29,7 +29,7 @@ export const Main = styled.div`
 `
 
 export const ContainerImage = styled.a`
-    width: 70%;
+    width: 90%;
     display: flex;
     cursor: pointer;
     align-items: center;
