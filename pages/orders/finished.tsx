@@ -5,6 +5,7 @@ import { Container, HeaderNav, ButtonBack, IconButtonBack, Title, OrdersContaine
 import Loading from '../../components/Loading'
 import { useState } from 'react'
 import Link from 'next/link'
+import { toast } from 'react-toastify'
 
 export default function Orders() {
     const { data: orders, mutate: ordersMutate } = api.get<IOrder[]>('/orders?location=true')
@@ -90,6 +91,10 @@ export default function Orders() {
                             await ordersMutate()
 
                             setOpenFinishModal(null)
+
+                            toast('Pedido finalizado com sucesso!', {
+                                type: 'success'
+                            })
                         }}>Finalizar pedido</ButtonConfirmFinish>
                     </ContainerButtonsFinish>
                 </ModalFinish>
@@ -112,6 +117,10 @@ export default function Orders() {
                             await ordersMutate()
 
                             setOpenDeleteModal(null)
+
+                            toast('Pedido deletado com sucesso!', {
+                                type: 'success'
+                            })
                         }}>Deletar pedido</ButtonConfirmDelete>
                     </ContainerButtonsDelete>
                 </ModalDelete>
