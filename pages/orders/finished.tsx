@@ -1,7 +1,7 @@
 import api from '../../api'
 import base from '../../api/base'
 import { IOrder } from '../../types'
-import { Container, HeaderNav, ButtonBack, IconButtonBack, Title, OrdersContainer, Order, Header, Neighborhood, Icons, ContainerIconDelete, IconDelete, Balance, Note, Footer, Created, Withdrawal, ModalOrder, ModalFinish, MessageConfirmFinish, ContainerButtonsFinish, ButtonCancelFinish, ButtonConfirmFinish, ModalDelete, MessageConfirmDelete, ContainerButtonsDelete, ButtonCancelDelete, ButtonConfirmDelete } from '../../styles/pages/orders/finished'
+import { Container, HeaderNav, ButtonBack, IconButtonBack, Title, OrdersContainer, Order, Header, Neighborhood, Icons, ContainerIconDelete, IconDelete, Balance, Note, Footer, Created, Withdrawal, ModalOrder, ModalDelete, MessageConfirmDelete, ContainerButtonsDelete, ButtonCancelDelete, ButtonConfirmDelete } from '../../styles/pages/orders/finished'
 import Loading from '../../components/Loading'
 import { useState } from 'react'
 import Link from 'next/link'
@@ -11,7 +11,6 @@ export default function Orders() {
     const { data: orders, mutate: ordersMutate } = api.get<IOrder[]>('/orders?location=true')
     const [openOrderModal, setOpenOrderModal] = useState<IOrder | null>()
     const [openDeleteModal, setOpenDeleteModal] = useState<IOrder | null>()
-    const [openFinishModal, setOpenFinishModal] = useState<IOrder | null>()
 
     return (
         <Container>
@@ -69,35 +68,6 @@ export default function Orders() {
                     onRequestClose={() => setOpenOrderModal(null)}
                 >
                 </ModalOrder>
-                <ModalFinish
-                    style={{
-                        overlay: {
-                            display: 'flex',
-                            backgroundColor: 'rgba(0, 0, 0, 0.2)'
-                        }
-                    }}
-                    isOpen={openFinishModal ? true : false}
-                    onRequestClose={() => setOpenFinishModal(null)}
-                >
-                    <MessageConfirmFinish>Tem certeza que deseja finalizar esse pedido?</MessageConfirmFinish>
-                    <ContainerButtonsFinish>
-                        <ButtonCancelFinish onClick={() => setOpenFinishModal(null)}>Cancelar</ButtonCancelFinish>
-                        <ButtonConfirmFinish onClick={async () => {
-                            await base.patch(`/orders/${openFinishModal?._id}`, {
-                                ...openFinishModal,
-                                finished: true
-                            })
-                            
-                            await ordersMutate()
-
-                            setOpenFinishModal(null)
-
-                            toast('Pedido finalizado com sucesso!', {
-                                type: 'success'
-                            })
-                        }}>Finalizar pedido</ButtonConfirmFinish>
-                    </ContainerButtonsFinish>
-                </ModalFinish>
                 <ModalDelete
                     style={{
                         overlay: {
