@@ -20,9 +20,9 @@ const Plate: FC<Iprops> = ({ plate, setOpenPlateModal, setOpenDeleteModal }) => 
             <Main>
                 <Link href={plate.photo.url} passHref>
                     <ContainerImage target="_blank" title="Abrir foto" onClick={ev => {
-                    ev.stopPropagation()
-                    ev.cancelable = true
-                }}>
+                        ev.stopPropagation()
+                        ev.cancelable = true
+                    }}>
                         <Image src={plate.photo.url}/>
                     </ContainerImage>
                 </Link>

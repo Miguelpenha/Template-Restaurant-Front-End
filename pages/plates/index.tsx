@@ -39,6 +39,7 @@ function Plates() {
                 {plates ? plates.map(plate => (
                     <Plate
                         plate={plate}
+                        key={plate._id}
                         setOpenPlateModal={setOpenPlateModal}
                         setOpenDeleteModal={setOpenDeleteModal}
                     />
