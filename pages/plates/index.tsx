@@ -1,15 +1,17 @@
 import api from '../../api'
 import { IPlate } from '../../types'
 import { useState } from 'react'
-import { Container, HeaderNav, ButtonBack, IconButtonBack, ContainerIconAdd, IconAdd, Title, PlatesContainer, ModalPlate, ModalDelete } from '../../styles/pages/plates'
+import { Container, HeaderNav, ButtonBack, IconButtonBack, ContainerIconAdd, IconAdd, Title, PlatesContainer, ModalEdit, ModalPlate, ModalDelete } from '../../styles/pages/plates'
 import Link from 'next/link'
 import Plate from '../../components/pages/plates/Plate'
 import Loading from '../../components/Loading'
+import ModalEditContent from '../../components/pages/plates/ModalEditContent'
 import ModalPlateContent from '../../components/pages/plates/ModalPlateContent'
 import ModalDeleteContent from '../../components/pages/plates/ModalDeleteContent'
 
 function Plates() {
     const { data: plates, mutate: platesMutate } = api.get<IPlate[]>('/plates?photo=true')
+    const [openEditModal, setOpenEditModal] = useState<IPlate | null>()
     const [openPlateModal, setOpenPlateModal] = useState<IPlate | null>()
     const [openDeleteModal, setOpenDeleteModal] = useState<IPlate | null>()
 
@@ -40,11 +42,28 @@ function Plates() {
                     <Plate
                         plate={plate}
                         key={plate._id}
+                        setOpenEditModal={setOpenEditModal}
                         setOpenPlateModal={setOpenPlateModal}
                         setOpenDeleteModal={setOpenDeleteModal}
                     />
                 )) : <Loading/>}
             </PlatesContainer>
+            <ModalEdit
+                style={{
+                    overlay: {
+                        display: 'flex',
+                        backgroundColor: 'rgba(0, 0, 0, 0.2)'
+                    }
+                }}
+                isOpen={openEditModal ? true : false}
+                onRequestClose={() => setOpenEditModal(null)}
+            >
+                <ModalEditContent
+                    platesMutate={platesMutate}
+                    openEditModal={openEditModal}
+                    setOpenEditModal={setOpenEditModal}
+                />
+            </ModalEdit>
             <ModalPlate
                 style={{
                     overlay: {

@@ -85,6 +85,22 @@ export const InputTextArea = styled.textarea`
     margin-top: 4%;
     resize: vertical;
     border-radius: 5px;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    color: ${props => props.theme.color};
+    background-color: ${props => props.theme.backgroundColor};
+    
+    :focus {
+        outline: none;
+    }
+`
+
+export const InputImage = styled.input`
+    padding: 4%;
+    border: none;
+    font-size: 1vw;
+    margin-top: 4%;
+    border-radius: 5px;
     color: ${props => props.theme.color};
     background-color: ${props => props.theme.backgroundColor};
     

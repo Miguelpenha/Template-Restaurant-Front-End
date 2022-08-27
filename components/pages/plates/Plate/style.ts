@@ -63,12 +63,12 @@ export const Name = styled.h3`
 `
 
 export const Icons = styled.div`
-    width: 20%;
+    width: 35%;
     display: flex;
     margin-left: auto;
 `
 
-export const ContainerIconDelete = styled.button`
+export const ContainerIconOption = styled.button`
     z-index: 2;
     padding: 2%;
     width: 100%;
@@ -88,7 +88,7 @@ export const ContainerIconDelete = styled.button`
     }
 `
 
-export const IconDelete = styled.svg`
+export const IconOption = styled.svg`
     width: 80%;
     margin: auto;
 `

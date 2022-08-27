@@ -1,6 +1,6 @@
-import { Container, HeaderNav, ButtonBack, IconButtonBack, Title, Form, Field, Label, Input, InputTextArea, ButtonSubmit } from '../../styles/pages/plates/registration'
+import { Container, HeaderNav, ButtonBack, IconButtonBack, Title, Form, Field, Label, InputImage, Input, InputTextArea, ButtonSubmit } from '../../styles/pages/plates/registration'
 import Link from 'next/link'
-import { useState } from 'react'
+import { InputHTMLAttributes, useEffect, useRef, useState } from 'react'
 import api from '../../api/base'
 import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
@@ -11,6 +11,7 @@ function Registration() {
     const [weight, setWeight] = useState(100)
     const [peoplesCount, setPeoplesCount] = useState(1)
     const [description, setDescription] = useState('')
+    const [photo, setPhoto] = useState<File>()
     const router = useRouter()
 
     return (
@@ -30,19 +31,22 @@ function Registration() {
                 ev.preventDefault()
 
                 if (name && price && weight && peoplesCount) {
-                    await api.post('/plates', {
-                        name,
-                        price,
-                        weight,
-                        peoplesCount,
-                        description
-                    })
-    
-                    router.back()
+                    let formData = new FormData()
+                
+                    formData.append('photo', photo as unknown as string)
+                    formData.append('name', name)
+                    formData.append('price', price)
+                    formData.append('weight', weight as unknown as string)
+                    formData.append('peoplesCount', peoplesCount as unknown as string)
+                    formData.append('description', description)
+
+                    await api.post('/plates', formData)
 
                     toast('Prato cadastrado com sucesso!', {
                         type: 'success'
                     })
+
+                    router.back()
                 } else {
                     toast('Campos em falta', {
                         type: 'error'
@@ -68,6 +72,10 @@ function Registration() {
                 <Field>
                     <Label htmlFor="Descrição">Descrição</Label>
                     <InputTextArea rows={3} onChange={ev => setDescription(ev.target.value)} defaultValue={description} id="description" name="description" placeholder="Descrição do prato..."/>
+                </Field>
+                <Field>
+                    <Label htmlFor="Foto">Foto</Label>
+                    <InputImage type="file" accept="image/png, image/jpeg, image/bmp, image/webp, image/gif, image/psd, image/tiff, image/jp2, image/iff, image/vnd.wap.wbmp, image/xbm, image/vnd.microsoft.icon, image/cis-cod, image/ief, image/pipeg, image/svg+xml, image/x-cmu-raster, image/x-cmx, image/x-icon, image/x-portable-anymap, image/x-portable-bitmap, image/x-portable-graymap, image/x-portable-pixmap, image/x-rgb, image/x-xbitmap, image/x-xpixmap, image/x-xwindowdump, application/x-shockwave-flash, application/octet-stream" id="photo" name="photo" placeholder="Foto do prato..." onChange={ev => setPhoto(ev.target.files![0])}/>
                 </Field>
                 <ButtonSubmit type="submit">Cadastrar</ButtonSubmit>
             </Form>

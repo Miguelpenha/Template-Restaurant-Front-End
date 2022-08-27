@@ -93,6 +93,25 @@ const show = keyframes`
     }
 `
 
+export const ModalEdit = styled(ModalNotStyled)`
+    width: 40%;
+    height: 40%;
+    margin: auto;
+    outline: none;
+    display: flex;
+    padding: 1.5%;
+    border-radius: 15px;
+    flex-direction: column;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: ${props => props.theme.backgroundColor};
+    
+    ${props => props.isOpen && css`
+        animation: ${show} 0.5s;
+    `}
+`
+
 export const ModalPlate = styled(ModalNotStyled)`
     width: 40%;
     height: 40%;
