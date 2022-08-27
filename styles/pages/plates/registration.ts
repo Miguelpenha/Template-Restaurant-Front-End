@@ -70,11 +70,15 @@ export const Input = styled.input`
     font-size: 1vw;
     margin-top: 4%;
     border-radius: 5px;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
     color: ${props => props.theme.color};
     background-color: ${props => props.theme.backgroundColor};
+    border: 1px solid ${props => props.theme.backgroundColor};
     
     :focus {
         outline: none;
+        border: 1px solid ${props => props.theme.primary};
     }
 `
 
@@ -88,10 +92,12 @@ export const InputTextArea = styled.textarea`
     transition-duration: 0.1s;
     transition-timing-function: linear;
     color: ${props => props.theme.color};
+    border: 1px solid ${props => props.theme.backgroundColor};
     background-color: ${props => props.theme.backgroundColor};
     
     :focus {
         outline: none;
+        border: 1px solid ${props => props.theme.primary};
     }
 `
 
@@ -101,11 +107,15 @@ export const InputImage = styled.input`
     font-size: 1vw;
     margin-top: 4%;
     border-radius: 5px;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
     color: ${props => props.theme.color};
+    border: 1px solid ${props => props.theme.backgroundColor};
     background-color: ${props => props.theme.backgroundColor};
     
     :focus {
         outline: none;
+        border: 1px solid ${props => props.theme.primary};
     }
 `
 
