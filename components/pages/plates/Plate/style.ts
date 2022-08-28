@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.button`
-    width: 80%;
     padding: 4%;
+    width: 300px;
     margin: auto;
     border: none;
     display: flex;
