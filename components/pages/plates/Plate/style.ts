@@ -108,5 +108,4 @@ export const Created = styled.span`
     display: flex;
     padding: 4% 0%;
     margin-top: 8%;
-    font-size: 0.9vw;
 `

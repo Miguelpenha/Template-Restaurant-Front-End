@@ -37,22 +37,23 @@ export const IconButtonBack = styled.svg`
 export const Title = styled.h1`
     margin: auto;
     margin-top: 4%;
-    font-size: 2.5vw;
+    font-size: 40px;
     color: ${props => props.theme.primary};
 `
 
 export const OrdersContainer = styled.div`
     display: grid;
     margin-top: 5%;
-    grid-row-gap: 15%;
-    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 5vh;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 350px);
 `
 
 export const Order = styled.button`
-    width: 80%;
     padding: 4%;
-    border: none;
+    width: 300px;
     margin: auto;
+    border: none;
     display: flex;
     cursor: pointer;
     border-radius: 15px;
@@ -130,7 +131,6 @@ export const Footer = styled.div`
 export const Created = styled.span`
     display: flex;
     padding: 4% 0%;
-    font-size: 0.9vw;
     align-self: center;
 `
 

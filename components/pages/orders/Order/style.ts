@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.button`
-    width: 80%;
     padding: 4%;
+    width: 300px;
     margin: auto;
     border: none;
     display: flex;
@@ -104,9 +104,8 @@ export const Footer = styled.div`
 `
 
 export const Created = styled.span`
-    padding: 4% 0%;
     display: flex;
-    font-size: 0.9vw;
+    padding: 4% 0%;
     align-self: center;
 `
 

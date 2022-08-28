@@ -37,7 +37,7 @@ export const IconButtonBack = styled.svg`
 export const Title = styled.h1`
     margin: auto;
     margin-top: 4%;
-    font-size: 2.5vw;
+    font-size: 40px;
     color: ${props => props.theme.primary};
 `
 
