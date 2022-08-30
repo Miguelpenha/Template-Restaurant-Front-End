@@ -1,6 +1,6 @@
 import { IOrder } from '../../../../types'
 import { Dispatch, FC, SetStateAction } from 'react'
-import { Container, Header, Neighborhood, Icons, ContainerIconDelete, IconDelete, ContainerIconCheck, IconCheck, Balance, Note, Footer, Created, Withdrawal } from './style'
+import { Container, Header, Neighborhood, Icons, ContainerIconDelete, IconDelete, ContainerIconCheck, IconCheck, Balance, Note, Contact, Footer, Created, Withdrawal } from './style'
 
 interface Iprops {
     order: IOrder
@@ -46,6 +46,7 @@ const Order: FC<Iprops> = ({ order, setOpenOrderModal, setOpenDeleteModal, setOp
             </Header>
             <Balance>{order.balanceConverted}</Balance>
             <Note>{order.note}</Note>
+            <Contact>{order.nameUser} | {order.contact.telephone}</Contact>
             <Footer>
                 <Created>Pedido feito as {order.created.hour}</Created>
                 {order.withdrawal && <Withdrawal>Pedido para retirada</Withdrawal>}

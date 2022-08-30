@@ -98,6 +98,12 @@ export const Note = styled.span`
     color: ${props => props.theme.secondaryColor};
 `
 
+export const Contact = styled.h4`
+    display: flex;
+    margin-top: 3.5%;
+    color: ${props => props.theme.secondaryColor};
+`
+
 export const Footer = styled.div`
     display: flex;
     margin-top: 10%;

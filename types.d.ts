@@ -57,7 +57,14 @@ export interface IOrder {
     list: IItemList[]
     finished?: boolean
     location: ILocation
+    nameUser: string
     withdrawal: boolean
     methodOfPayment: string
     balanceConverted: string
+    contact: IContact
+}
+
+export interface IContact {
+    email?: string
+    telephone: string
 }

@@ -9,7 +9,7 @@ import ModalFinishContent from '../../components/pages/orders/ModalFinishContent
 import ModalDeleteContent from '../../components/pages/orders/ModalDeleteContent'
 
 export default function Orders() {
-    const { data: orders, mutate: ordersMutate } = api.get<IOrder[]>('/orders?location=true')
+    const { data: orders, mutate: ordersMutate } = api.get<IOrder[]>('/orders?location=true&contact=true')
     const [openOrderModal, setOpenOrderModal] = useState<IOrder | null>()
     const [openDeleteModal, setOpenDeleteModal] = useState<IOrder | null>()
     const [openFinishModal, setOpenFinishModal] = useState<IOrder | null>()
