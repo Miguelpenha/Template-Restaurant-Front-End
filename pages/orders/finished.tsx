@@ -1,14 +1,14 @@
 import api from '../../api'
 import base from '../../api/base'
 import { IOrder } from '../../types'
-import { Container, HeaderNav, ButtonBack, IconButtonBack, Title, OrdersContainer, Order, Header, Neighborhood, Icons, ContainerIconDelete, IconDelete, Balance, Note, Footer, Created, Withdrawal, ModalOrder, ModalDelete, MessageConfirmDelete, ContainerButtonsDelete, ButtonCancelDelete, ButtonConfirmDelete } from '../../styles/pages/orders/finished'
+import { Container, HeaderNav, ButtonBack, IconButtonBack, Title, OrdersContainer, Order, Header, Neighborhood, Icons, ContainerIconDelete, IconDelete, Balance, Note, Contact, Footer, Created, Withdrawal, ModalOrder, ModalDelete, MessageConfirmDelete, ContainerButtonsDelete, ButtonCancelDelete, ButtonConfirmDelete } from '../../styles/pages/orders/finished'
 import Loading from '../../components/Loading'
 import { useState } from 'react'
 import Link from 'next/link'
 import { toast } from 'react-toastify'
 
 export default function Orders() {
-    const { data: orders, mutate: ordersMutate } = api.get<IOrder[]>('/orders?location=true')
+    const { data: orders, mutate: ordersMutate } = api.get<IOrder[]>('/orders?location=true&contact=true')
     const [openOrderModal, setOpenOrderModal] = useState<IOrder | null>()
     const [openDeleteModal, setOpenDeleteModal] = useState<IOrder | null>()
 
@@ -51,6 +51,7 @@ export default function Orders() {
                         </Header>
                         <Balance>{order.balanceConverted}</Balance>
                         <Note>{order.note}</Note>
+                        <Contact>{order.nameUser} | {order.contact.telephone}</Contact>
                         <Footer>
                             <Created>Pedido feito as {order.created.hour}</Created>
                             {order.withdrawal && <Withdrawal>Pedido para retirada</Withdrawal>}
