@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { toast } from 'react-toastify'
 
 export default function Orders() {
-    const { data: orders, mutate: ordersMutate } = api.get<IOrder[]>('/orders?location=true&contact=true')
+    const { data: orders, mutate: ordersMutate } = api.get<IOrder[]>('/orders?location=true&contact=true&finished=true')
     const [openOrderModal, setOpenOrderModal] = useState<IOrder | null>()
     const [openDeleteModal, setOpenDeleteModal] = useState<IOrder | null>()
 
@@ -26,7 +26,7 @@ export default function Orders() {
                 <Title>Pedidos Finalizados</Title>
             </HeaderNav>
             <OrdersContainer>
-                {orders ? orders.map(order => order.finished && (
+                {orders ? orders.map(order => (
                     <Order key={order._id} title="Ver pedido" onClick={ev => {
                         ev.stopPropagation()
                         ev.cancelable = true
