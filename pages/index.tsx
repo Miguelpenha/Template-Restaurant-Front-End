@@ -1,8 +1,12 @@
+import Head from 'next/head'
 import { Container, Title, Menu, ButtonOrders, IconButtonOrders } from '../styles/pages'
 import Link from 'next/link'
 
 export default function Home() {
-    return (
+    return <>
+        <Head>
+            <title>Template de Restaurante</title>
+        </Head>
         <Container>
             <Title>Template de Restaurante</Title>
             <Menu>
@@ -26,5 +30,5 @@ export default function Home() {
                 </Link>
             </Menu>
         </Container>
-    )
+    </>
 }

@@ -1,6 +1,7 @@
 import api from '../../api'
 import { IPlate } from '../../types'
 import { useState } from 'react'
+import Head from 'next/head'
 import { Container, HeaderNav, ButtonBack, IconButtonBack, ContainerIconAdd, IconAdd, Title, PlatesContainer, ModalEdit, ModalPlate, ModalDelete } from '../../styles/pages/plates'
 import Link from 'next/link'
 import Plate from '../../components/pages/plates/Plate'
@@ -15,7 +16,10 @@ function Plates() {
     const [openPlateModal, setOpenPlateModal] = useState<IPlate | null>()
     const [openDeleteModal, setOpenDeleteModal] = useState<IPlate | null>()
 
-    return (
+    return <>
+        <Head>
+            <title>Pratos</title>
+        </Head>
         <Container>
             <HeaderNav>
                 <Link href="/" passHref>
@@ -93,7 +97,7 @@ function Plates() {
                 />
             </ModalDelete>
         </Container>
-    )
+    </>
 }
 
 export default Plates

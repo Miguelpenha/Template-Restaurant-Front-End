@@ -1,6 +1,7 @@
 import api from '../../api'
 import base from '../../api/base'
 import { IOrder } from '../../types'
+import Head from 'next/head'
 import { Container, HeaderNav, ButtonBack, IconButtonBack, Title, OrdersContainer, Order, Header, Neighborhood, Icons, ContainerIconDelete, IconDelete, Balance, Note, Contact, Footer, Created, Withdrawal, ModalOrder, ModalDelete, MessageConfirmDelete, ContainerButtonsDelete, ButtonCancelDelete, ButtonConfirmDelete } from '../../styles/pages/orders/finished'
 import Loading from '../../components/Loading'
 import { useState } from 'react'
@@ -12,7 +13,10 @@ export default function Orders() {
     const [openOrderModal, setOpenOrderModal] = useState<IOrder | null>()
     const [openDeleteModal, setOpenDeleteModal] = useState<IOrder | null>()
 
-    return (
+    return <>
+        <Head>
+            <title>Pedidos Finalizados</title>
+        </Head>
         <Container>
             <HeaderNav>
                 <Link href="/orders" passHref>
@@ -97,5 +101,5 @@ export default function Orders() {
                 </ModalDelete>
             </OrdersContainer>
         </Container>
-    )
+    </>
 }

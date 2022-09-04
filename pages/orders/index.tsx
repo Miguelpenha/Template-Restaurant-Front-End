@@ -1,5 +1,6 @@
 import api from '../../api'
 import { IOrder } from '../../types'
+import Head from 'next/head'
 import { Container, HeaderNav, ButtonBack, IconButtonBack, Title, ButtonOrdersFinished, IconButtonOrdersFinished, OrdersContainer, ModalOrder, ModalFinish, ModalDelete } from '../../styles/pages/orders'
 import Loading from '../../components/Loading'
 import { useState } from 'react'
@@ -14,7 +15,10 @@ export default function Orders() {
     const [openDeleteModal, setOpenDeleteModal] = useState<IOrder | null>()
     const [openFinishModal, setOpenFinishModal] = useState<IOrder | null>()
 
-    return (
+    return <>
+        <Head>
+            <title>Pedidos</title>
+        </Head>
         <Container>
             <HeaderNav>
                 <Link href="/" passHref>
@@ -91,5 +95,5 @@ export default function Orders() {
                 </ModalDelete>
             </OrdersContainer>
         </Container>
-    )
+    </>
 }

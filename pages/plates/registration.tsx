@@ -1,8 +1,9 @@
+import { useState } from 'react'
+import { useRouter } from 'next/router'
+import Head from 'next/head'
 import { Container, HeaderNav, ButtonBack, IconButtonBack, Title, Form, Field, Label, InputImage, Input, InputTextArea, ButtonSubmit } from '../../styles/pages/plates/registration'
 import Link from 'next/link'
-import { InputHTMLAttributes, useEffect, useRef, useState } from 'react'
 import api from '../../api/base'
-import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
 
 function Registration() {
@@ -14,7 +15,10 @@ function Registration() {
     const [photo, setPhoto] = useState<File>()
     const router = useRouter()
 
-    return (
+    return <>
+        <Head>
+            <title>Cadastrar Prato</title>
+        </Head>
         <Container>
             <HeaderNav>
                 <Link href="/plates" passHref>
@@ -80,7 +84,7 @@ function Registration() {
                 <ButtonSubmit type="submit">Cadastrar</ButtonSubmit>
             </Form>
         </Container>
-    )
+    </>
 }
 
 export default Registration
