@@ -78,6 +78,7 @@ export const PlatesContainer = styled.div`
     display: grid;
     margin-top: 5%;
     grid-row-gap: 5vh;
+    margin-bottom: 5%;
     justify-content: center;
     grid-template-columns: repeat(auto-fill, 350px);
 `
