@@ -35,20 +35,21 @@ export const IconButtonBack = styled.svg`
 
 export const Title = styled.h1`
     margin: auto;
-    margin-top: 4%;
-    font-size: 2.5vw;
+    margin-top: 6%;
+    font-size: 2rem;
     color: ${props => props.theme.primary};
 `
 
 export const Form = styled.form`
-    width: 30%;
     padding: 2%;
     display: flex;
-    margin-top: 2%;
+    margin-top: 8%;
+    padding-top: 2rem;
     margin-bottom: 5%;
     align-self: center;
     border-radius: 15px;
     flex-direction: column;
+    width: calc(300px + 8vw);
     background-color: ${props => props.theme.backgroundColorSecondary};
 `
 
@@ -61,14 +62,14 @@ export const Field = styled.div`
 `
 
 export const Label = styled.label`
-    
+    font-size: 1rem;
 `
 
 export const Input = styled.input`
     padding: 4%;
     border: none;
-    font-size: 1vw;
     margin-top: 4%;
+    font-size: 0.8rem;
     border-radius: 5px;
     transition-duration: 0.1s;
     transition-timing-function: linear;
@@ -85,9 +86,9 @@ export const Input = styled.input`
 export const InputTextArea = styled.textarea`
     padding: 4%;
     border: none;
-    font-size: 1vw;
     margin-top: 4%;
     resize: vertical;
+    font-size: 0.8rem;
     border-radius: 5px;
     transition-duration: 0.1s;
     transition-timing-function: linear;
@@ -104,8 +105,8 @@ export const InputTextArea = styled.textarea`
 export const InputImage = styled.input`
     padding: 4%;
     border: none;
-    font-size: 1vw;
     margin-top: 4%;
+    font-size: 0.8rem;
     border-radius: 5px;
     transition-duration: 0.1s;
     transition-timing-function: linear;
@@ -126,12 +127,13 @@ export const ButtonSubmit = styled.button`
     display: flex;
     margin-top: 5%;
     cursor: pointer;
-    font-size: 1.5vw;
+    font-size: 1.2rem;
     font-weight: bold;
     align-self: center;
     align-items: center;
     border-radius: 15px;
     text-decoration: none;
+    margin-bottom: 0.5rem;
     transform: scale(0.95);
     transition-duration: 0.1s;
     justify-content: space-evenly;
