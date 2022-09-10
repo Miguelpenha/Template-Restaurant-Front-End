@@ -1,14 +1,16 @@
 import { FC } from 'react'
 import { AppProps } from 'next/app'
+import { AuthProvider } from '../authContext'
 import { ThemeProvider } from 'styled-components'
 import theme from '../styles/theme'
 import Head from 'next/head'
 import GlobalStyle from '../styles/global'
 import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css'
 
 const TemplateRestaurant: FC<AppProps> = ({ Component, pageProps }) => {
   return (
+    <AuthProvider>
       <ThemeProvider theme={theme}>
         <Head>
           <meta charSet="UTF-8"/>
@@ -19,6 +21,7 @@ const TemplateRestaurant: FC<AppProps> = ({ Component, pageProps }) => {
         <ToastContainer theme="dark"/>
         <GlobalStyle/>
       </ThemeProvider>
+    </AuthProvider>
   )
 }
 

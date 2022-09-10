@@ -4,11 +4,13 @@ import api from '../api/base'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/router'
 import { Container, Title, Form, Field, Label, Input, ButtonSubmit } from '../styles/pages/login'
+import { useAuth } from '../authContext'
 
 export default function Login() {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
     const router = useRouter()
+    const { sigIn } = useAuth()
 
     return <>
         <Head>
@@ -26,11 +28,13 @@ export default function Login() {
                     })).data
 
                     if (authenticated) {
+                        await sigIn(login, password)
+
                         toast('Login feito com sucesso!', {
                             type: 'success'
                         })
     
-                        router.replace('/')
+                        // router.replace('/')
                     } else {
                         toast('Login ou senha erradas', {
                             type: 'error'

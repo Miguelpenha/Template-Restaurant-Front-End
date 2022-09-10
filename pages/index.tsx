@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import { Container, Title, Menu, ButtonOrders, IconButtonOrders } from '../styles/pages'
 import Link from 'next/link'
+import { GetServerSideProps } from 'next'
+import nookies from 'nookies'
 
 export default function Home() {
     return <>
@@ -31,4 +33,21 @@ export default function Home() {
             </Menu>
         </Container>
     </>
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+    const { [process.env.NEXT_PUBLIC_NAME_COOKIE_LOGIN]:token } = nookies.get(ctx)
+  
+    if (!token) {
+        return {
+            redirect: {
+              destination: 'login',
+              permanent: false
+            }
+        }
+    }
+  
+    return {
+      props: {}
+    }
 }
