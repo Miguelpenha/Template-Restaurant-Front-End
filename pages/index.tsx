@@ -35,6 +35,7 @@ export default function Home() {
     </>
 }
 
+/*
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
     const { [process.env.NEXT_PUBLIC_NAME_COOKIE_LOGIN]:token } = nookies.get(ctx)
   
@@ -51,3 +52,4 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       props: {}
     }
 }
+*/

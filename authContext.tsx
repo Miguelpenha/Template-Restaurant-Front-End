@@ -40,7 +40,7 @@ export const AuthProvider: FC = ({ children }) => {
         
         if (authenticated) {
             setIsLogged(true)
-            console.log(login, password)
+            
             setCookie(undefined, process.env.NEXT_PUBLIC_NAME_COOKIE_LOGIN, token, {
                 path: '/',
                 secure: true,
